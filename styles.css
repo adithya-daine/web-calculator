@@ -1,0 +1,66 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: normal;
+}
+
+body{
+
+    /* Reset the contents */
+    padding: 0;
+    margin: 0;
+    background: black;
+}
+
+.output{
+    grid-column: 1 / -1; /* Flexes upto the entire now grid length at the top */
+    background-color: rgba(20, 19, 19, 0.75);
+    display: flex;
+    align-items: flex-end; /* Appears to the bottom right of the grid-column */
+    justify-content: space-around;
+    flex-direction: column; /* Takes up in the column direction, not the default row direction */
+    padding: 10px;
+
+    /* Used when the input or output is long and needs to be wrapped to prevent loosing the content */
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output, .previous-operand{
+    color: azure;
+    font-size: 1rem;
+
+}
+
+.output, .current-operand{
+    color: aquamarine;
+    font-size: 2.5rem;
+}
+
+
+.calculator-grid{
+    display: grid; /* Grid is opted to position all the buttons in a conventional layout */
+    justify-content: center; /* Used to align the contents in the center */
+
+    /*align-items: center*/ /* This is used to align each item*/
+    align-content: center; /* This is used to align the entire content together*/
+    min-height: 100vh; 
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid whitesmoke;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.calculator-grid > button:hover{
+    background-color: rgba(255, 255, 255, 0.90);
+}
+
+.span-two{
+    grid-column: span 2;
+}
